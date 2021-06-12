@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface IClientRepo extends JpaRepository<Client, Long> {
-    Optional<Client> findClientByclientEmail(final @NotBlank(message = "The Email Field is blank.") String employeeNumber);
+    Optional<Client> findClientByclientEmail(final @NotBlank(message = "The Email Field is blank.") String employeeEmail);
 }
 
