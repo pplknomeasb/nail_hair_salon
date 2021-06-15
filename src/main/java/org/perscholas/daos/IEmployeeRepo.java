@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface IEmployeeRepo extends JpaRepository<Employee, Long> {
-    Optional<Employee> findEmployeeByemployeeEmail(final @NotBlank(message = "The Email Field is blank.") String employeeEmail);
+    Optional<Employee> findEmployeeByemployeeNumber(final @NotBlank(message = "The Email Field is blank.") Long employeeNumber);
 }
 
