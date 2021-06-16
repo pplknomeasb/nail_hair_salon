@@ -10,7 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 
-@Table(name = "Employee")
+@Table(name = "Employees")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
