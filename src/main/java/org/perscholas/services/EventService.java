@@ -2,13 +2,10 @@ package org.perscholas.services;
 
 import lombok.extern.java.Log;
 import org.perscholas.daos.IEventRepo;
-import org.perscholas.models.Employee;
 import org.perscholas.models.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

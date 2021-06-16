@@ -5,7 +5,6 @@ import org.perscholas.daos.IClientRepo;
 
 import org.perscholas.models.Client;
 
-import org.perscholas.models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

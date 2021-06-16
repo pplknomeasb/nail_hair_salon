@@ -22,7 +22,6 @@ import java.util.Date;
 
 public class Appointment implements Serializable{
 
-    @Id
-    Long cConfirmationNumber;
+
 
 }

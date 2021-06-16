@@ -13,6 +13,7 @@ import java.util.Date;
 
 @Table(name = "Clients")
 @Data
+@Getter@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -26,16 +27,22 @@ public class Client implements Serializable{
     @GeneratedValue(strategy= GenerationType.IDENTITY)@Size(min =12)
     Long cConfirmationNumber;
 
-    @NotBlank(message = "The date field has not been changed.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
+    @NotBlank(message = "The date field has not been changed.") //@Size(min = 3, max = 25")
     //@Column(unique=true)
     //@UniqueConstraint()
-    Date dateTime;
+    Date cDateTime;
 
-    @NotBlank(message="The Event field has not been changed.")
+    @NotBlank(message="Complete all fields to proceed. First Name")
+    String cFname;
+
+    @NotBlank(message="Complete all fields to proceed.  Email")
+    String clientEmail;
+
+    @NotBlank(message="Complete all fields to proceed. Last Name")
     String cLname;
 
 
-    @NotBlank(message="A valid employee number is required.")
+    @NotBlank(message="A valid client number is required.")
     Long cPhoneNum;
 
 
