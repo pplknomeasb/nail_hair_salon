@@ -45,4 +45,5 @@ public class Employee implements Serializable{
     @NotBlank@NotNull(message="You must select a User Type.")
     String eUserType;
 
+
 }
