@@ -1,9 +1,6 @@
 package org.perscholas.models;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.java.Log;
 import org.hibernate.validator.constraints.Length;
@@ -12,10 +9,12 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Table(name = "Client")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Log
@@ -42,5 +41,6 @@ public class Client implements Serializable{
     @NotBlank(message ="The Email Field is blank.")
     String clientEmail;
 
+    Date cDateTime;
 
 }

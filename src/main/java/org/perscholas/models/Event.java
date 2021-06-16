@@ -32,7 +32,7 @@ public class Event implements Serializable{
     Long eventEmpNumber;
 
     @NotBlank(message="There isn't a cost in place for the event.")
-    String eLname;
+    Long eventCost;
 
 
     @NotBlank(message="You must insert a projected duration for the event.")
