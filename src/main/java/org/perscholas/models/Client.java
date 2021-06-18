@@ -24,7 +24,7 @@ import java.util.Date;
 public class Client implements Serializable{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)@Size(min =12)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)@Size(min =8)
     Long cConfirmationNumber;
 
     @NotBlank(message = "The date field has not been changed.") //@Size(min = 3, max = 25")

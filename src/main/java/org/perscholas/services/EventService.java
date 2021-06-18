@@ -29,14 +29,14 @@ public class EventService {
     }
 
 
-    public void updateEvent(String eventType, Long eventEmpNumber, Long eventCost, Long eventDuration){
+    public void updateEvent(String eventType, int eventEmployeeNumber, Double eventCost, Double eventDuration){
 
         boolean exists = eventRepo.existsById(eventType);
         if(exists){
             Event event = eventRepo.findEventByeventType(eventType).get();
             log.info("Event was Updated.");
             event.setEventType(eventType);
-            event.setEventEmpNumber(eventEmpNumber);
+            event.setEventEmployeeNumber(event.getEventEmployeeNumber());
             event.setEventCost(eventCost);
             event.setEventDuration(eventDuration);
 

@@ -14,6 +14,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Getter@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
@@ -24,24 +25,28 @@ public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long employeeNumber;
 
-    @NotBlank@NotNull(message = "The First Name Field is blank.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
+    Long employeeNumber;
+    @NonNull
+    @NotBlank@NotNull(message = "The First Name Field is blank.")
     //@Column(unique=true)
     //@UniqueConstraint()
     String eFname;
 
+    @NonNull
     @NotBlank@NotNull(message="The Last Name Field is blank.")
     String eLname;
 
-
+    @NonNull
     @NotBlank@NotNull(message="The Phone Number Field is blank.")
     Long ePhoneNum;
 
+    @NonNull
     @Column(unique = true)@NotNull
     @NotBlank(message ="The Email Field is blank.")
     String employeeEmail;
 
+    @NonNull
     @NotBlank@NotNull(message="You must select a User Type.")
     String eUserType;
 

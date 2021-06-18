@@ -22,6 +22,7 @@ import java.util.Date;
 
 public class Appointment implements Serializable{
 
-
+@Id
+    String name;
 
 }
