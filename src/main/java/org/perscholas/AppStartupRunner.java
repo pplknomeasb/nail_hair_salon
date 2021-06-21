@@ -55,7 +55,7 @@ public class AppStartupRunner implements CommandLineRunner {
         clientRepo.save(new Client("2022-06-15", "Audri", "Belle", "abelle@parts.net", 7965412547L));
         clientRepo.save(new Client("2022-06-15", "Tyrone", "Greenwood", "thompson.brennan@gmail.com", 7996523147L));
 
-        //appointmentRepo.save(new Appointment("thompson.brennan@gmail.com", "2022-06-15", 1L, 3L));
+        appointmentRepo.save(new Appointment("thompson.brennan@gmail.com", "2022-06-15", 1L, 3L, 12354L));
 
 
 

@@ -4,19 +4,22 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.java.Log;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Table(name = "Appointments")
 @Data
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Getter@Setter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Log
@@ -28,15 +31,17 @@ public class Appointment implements Serializable{
     @NotBlank(message="Complete all fields to proceed.  Clients Email")
     String aClientEmail;
 
-    @NotBlank(message = "The date field has not been changed.") //@Size(min = 3, max = 25")
-    @Temporal(TemporalType.DATE)
+    @NotNull(message = "The date field has not been changed.") //@Size(min = 3, max = 25")
+
+    //@DateTimeFormat(pattern="yyyy/MM/dd hh:mm:ss")
+    @Temporal(TemporalType.DATE)@DateTimeFormat(pattern="yyyy/MM/dd")
     Date aDateTime;
 
-    @NotBlank(message="Complete all fields to proceed. Event Type")
+    @NotNull(message="Complete all fields to proceed. Event Type")
     Long aEventType;
 
     @GeneratedValue(strategy= GenerationType.IDENTITY)//@Size(min =8)
-    @NotBlank@NonNull Long aConfirmationNumber;
+    @NonNull Long aConfirmationNumber;
 
 
 
@@ -44,10 +49,17 @@ public class Appointment implements Serializable{
     Long aStylistEmpNumber;
 
 
-    public Appointment(String aClientEmail, Date aDateTime, long aEventType, long aStylistEmpNumber, long aConfirmationNumber) {
+    public Appointment(String aClientEmail, String aDateTime, long aEventType, long aStylistEmpNumber, long aConfirmationNumber) {
 
         this.aClientEmail = aClientEmail;
-        this.aDateTime = aDateTime;
+
+        try{
+            this.aDateTime = new SimpleDateFormat("yyyy-MM-dd").parse(aDateTime);}
+        catch(ParseException ex){
+            log.info(ex.getMessage());
+            throw new RuntimeException("ParseError");
+        }
+
         this.aEventType = aEventType;
         this.aStylistEmpNumber = aStylistEmpNumber;
         this.aConfirmationNumber = aConfirmationNumber;
