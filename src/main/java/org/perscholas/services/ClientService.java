@@ -25,7 +25,7 @@ public class ClientService {
     public List<Client> getClients() {return clientRepo.findAll();}
 
     public Client addNewClient(Client client){
-        Optional<Client> clientOptional = clientRepo.findByClientConfirmationNumber(client.getCConfirmationNumber());
+        Optional<Client> clientOptional = clientRepo.findBycConfirmationNumber(client.getCConfirmationNumber());
         if(clientOptional.isPresent()){
             throw new IllegalStateException(clientOptional + " is already in use.");
         }
@@ -37,7 +37,7 @@ public class ClientService {
 
         boolean exists = clientRepo.existsById(cConfirmationNumber);
         if(exists){
-            Client client= clientRepo.findByClientConfirmationNumber(cConfirmationNumber).get();
+            Client client= clientRepo.findBycConfirmationNumber(cConfirmationNumber).get();
             log.info("Client Details were updated.");
             client.setCFname(fName);
             client.setCLname(lName);
@@ -52,7 +52,7 @@ public class ClientService {
 
     @Transactional
     public void removeClient(Long cConfirmationNumber){
-        Optional<Client> clientOptional = clientRepo.findByClientConfirmationNumber(cConfirmationNumber);
+        Optional<Client> clientOptional = clientRepo.findBycConfirmationNumber(cConfirmationNumber);
         boolean exists = clientRepo.existsById(cConfirmationNumber);
         if(exists){
             log.info("Client with Confirmation number " + cConfirmationNumber+ " has been removed");

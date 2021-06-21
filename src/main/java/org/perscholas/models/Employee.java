@@ -2,8 +2,6 @@ package org.perscholas.models;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.java.Log;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -29,8 +27,6 @@ public class Employee implements Serializable{
     Long employeeNumber;
     @NonNull
     @NotBlank@NotNull(message = "The First Name Field is blank.")
-    //@Column(unique=true)
-    //@UniqueConstraint()
     String eFname;
 
     @NonNull
@@ -38,7 +34,7 @@ public class Employee implements Serializable{
     String eLname;
 
     @NonNull
-    @NotBlank@NotNull(message="The Phone Number Field is blank.")
+    @NotNull(message="The Phone Number Field is blank.")
     Long ePhoneNum;
 
     @NonNull

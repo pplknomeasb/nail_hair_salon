@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface IClientRepo extends JpaRepository<Client, Long> {
-    Optional<Client> findByClientConfirmationNumber(final @NotBlank(message = "The confirmation number field is blank.") Long clientConfirmationNumber);
+    Optional<Client> findBycConfirmationNumber(final @NotBlank(message = "The confirmation number field is blank.") Long clientConfirmationNumber);
 }
 
