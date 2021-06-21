@@ -61,10 +61,10 @@ public class Client implements Serializable{
         this.cPhoneNum = cPhoneNum;
     }
 
-    public Client(String s, String cFname, String cLname, String clientEmail, long cPhoneNum) {
+    public Client(String cDateTime, String cFname, String cLname, String clientEmail, long cPhoneNum) {
 
         try{
-        this.cDateTime = new SimpleDateFormat("yyyy-MM-dd").parse(s);}
+        this.cDateTime = new SimpleDateFormat("yyyy-MM-dd").parse(cDateTime);}
         catch(ParseException ex){
             log.info(ex.getMessage());
             throw new RuntimeException("ParseError");

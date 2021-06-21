@@ -2,14 +2,9 @@ package org.perscholas.services;
 
 import lombok.extern.java.Log;
 import org.perscholas.daos.IAppointmentRepo;
-import org.perscholas.daos.IClientRepo;
-
 import org.perscholas.models.Appointment;
-import org.perscholas.models.Client;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
@@ -35,7 +30,7 @@ public class AppointmentService {
     }
 
 
-    public void updateAppointment(String aClientEmail, Date aDateTime, Long aEventType, Long aStylistEmpNumber, Long aConfirmationNumber){
+    public void updateAppointment(String aClientEmail, Date aDateTime, String aEventType, Long aStylistEmpNumber, Long aConfirmationNumber){
 
         boolean exists = appointmentRepo.existsById(aConfirmationNumber);
         if(exists){
