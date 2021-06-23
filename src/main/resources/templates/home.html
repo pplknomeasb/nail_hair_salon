@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeLeaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
@@ -9,15 +12,29 @@
     <!-- Favicon-->
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <!--<link href="../css/styles.css" rel="stylesheet" />-->
+    <link href="../css/styles.css" rel="stylesheet" />
 </head>
     <body>
-    <form th:action="@{/home}"></form>
-    <h3>
-        <div class="container1">
 
-        </h3>
+
+    <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class = "container">
+            <a class="navbar-brand" th:href="@{/home}">Hair and Nail Salon</a>
+            <a href="/login"><button type="button" class="navbar-button" name="navbutton">User Login</button></a>
+        </div>
+    </nav>
+
+
+    <h1>hibrennan</h1>
     </div>
 
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1>A Bootstrap 5 Starter Template</h1>
+            <p class="lead">A complete project boilerplate built with Bootstrap</p>
+            <p>Bootstrap v5.0.1</p>
+        </div>
+    </div>
 </body>
 </html>
