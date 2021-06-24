@@ -2,7 +2,7 @@
 Link to ERD Model:
 https://drive.google.com/file/d/1e4suxdBgOFMWi013gcbefU3QGgfwxdDy/view?usp=sharing
 
-Link to Trello Board:
+Link to Users Board:
 https://docs.google.com/document/d/1OgjsBqGHKIctnY3v504u3xJro2GCQAh01Fhlz4KN5-g/edit?usp=sharing
 
 Front-End : Thymeleaf
