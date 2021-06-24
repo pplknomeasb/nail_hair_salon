@@ -22,7 +22,8 @@
         <p class="navbar-brand">Hair and Nail Salon - User Login</p>
 
         <a href="/home"><button>Return to Salon Home</button></a>
-        <a href="/schedule"><button>Schedule Appointment</button></a>
+        <a href="/logout"><button>Logout</button></a>
+
     </div>
 </nav>
 
@@ -34,15 +35,19 @@
         <!--place user role here-->
 
 
-        <label><span></span></label>
-        <label>Name : </label><br>
+        <p class="appointmentslist"><span>You May want to include user role</span></p><br>
+        <p class="appointmentslist">Name :    <span>  your name goes here</span></p><br>
         <!--<input type="text" placeholder="Enter Username" name="username" required>-->
-        <label>E-Mail : </label><br>
+        <p class="appointmentslist">E-Mail : <span>your email goes here</span></p><br>
         <!--<input type="password" placeholder="Enter Password" name="password" required>-->
-        <label>Phone Number : </label><br>
+        <p class="appointmentslist">Phone Number : </p><br>
         <label></label>
 
-        <button type="submit">Login</button>
+        <button type="submit">Update</button>
+    </div>
+    <br><br>
+    <div class="container" id="usercontainer2">
+        <textarea rows="10" cols="100" readonly>This is where upcoming appointments will be displayed.</textarea>
     </div>
 </form>
 
