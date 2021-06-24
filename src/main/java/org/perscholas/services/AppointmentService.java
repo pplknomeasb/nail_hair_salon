@@ -35,7 +35,7 @@ public class AppointmentService {
     }
 
 
-    public void updateAppointment(String aClientEmail, Date aDateTime, Long aEventType, Long aStylistEmpNumber, Long aConfirmationNumber){
+    public void updateAppointment(String aClientEmail, Date aDateTime, String aEventType, Long aStylistEmpNumber, Long aConfirmationNumber){
 
         boolean exists = appointmentRepo.existsById(aConfirmationNumber);
         if(exists){

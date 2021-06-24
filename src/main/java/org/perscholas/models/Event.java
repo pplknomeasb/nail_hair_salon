@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 @Table(name = "Events")
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -25,10 +27,10 @@ public class Event implements Serializable{
     String eventType;
 
     @NonNull
-    @NotBlank(message = "You must assign an Employee Number to the event.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
+    //@NotBlank(message = "You must assign an Employee Number to the event.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
     //@Column(unique=true)
     //@UniqueConstraint()
-    int eventEmployeeNumber;
+    Long eventEmployeeNumber;
 
     @NonNull
     @NotBlank(message="There isn't a cost in place for the event.")

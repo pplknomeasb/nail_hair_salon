@@ -32,7 +32,7 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
-    public void updateEmployee(Long employeeNumber, String fName, String lName, Long phoneNum, String email, String userType){
+    public void updateEmployee(Long employeeNumber, String fName, String lName, Long phoneNum, String email, String userType, String password){
 
         boolean exists = employeeRepo.existsById(employeeNumber);
         if(exists){
@@ -43,6 +43,7 @@ public class EmployeeService {
             employee.setEPhoneNum(phoneNum);
             employee.setEmployeeEmail(email);
             employee.setEUserType(userType);
+            employee.setEPassword(password);
 
         }
 
