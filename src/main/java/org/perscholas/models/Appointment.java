@@ -38,7 +38,7 @@ public class Appointment implements Serializable{
     Date aDateTime;
 
     @NotNull(message="Complete all fields to proceed. Event Type")
-    Long aEventType;
+    String aEventType;
 
     @GeneratedValue(strategy= GenerationType.IDENTITY)//@Size(min =8)
     @NonNull Long aConfirmationNumber;
@@ -49,7 +49,7 @@ public class Appointment implements Serializable{
     Long aStylistEmpNumber;
 
 
-    public Appointment(String aClientEmail, String aDateTime, long aEventType, long aStylistEmpNumber, long aConfirmationNumber) {
+    public Appointment(String aClientEmail, String aDateTime, String aEventType, long aStylistEmpNumber, long aConfirmationNumber) {
 
         this.aClientEmail = aClientEmail;
 
