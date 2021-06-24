@@ -13,8 +13,9 @@ public class HomeController {
     @GetMapping("/login")
     public String login() { return "login"; }
 
-    @GetMapping("/schedule.html")
+    @GetMapping("/schedule")
     public String schedule() { return "schedule"; }
 
-
+    @GetMapping("/user_page")
+    public String user_page() { return "user_page"; }
 }

@@ -1,4 +1,4 @@
 package org.perscholas.controllers;
 
-public class LoginController {
+public class AdminController {
 }
