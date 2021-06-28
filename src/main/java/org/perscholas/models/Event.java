@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name = "Events")
 @Data
@@ -26,6 +27,8 @@ public class Event implements Serializable{
     @NonNull@NotBlank(message = "The event type field is blank")
     String eventType;
 
+    @ManyToMany
+    Set<Employee> employeeSet;
     @NonNull
     //@NotBlank(message = "You must assign an Employee Number to the event.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
     //@Column(unique=true)
@@ -33,12 +36,13 @@ public class Event implements Serializable{
     Long eventEmployeeNumber;
 
     @NonNull
-    @NotBlank(message="There isn't a cost in place for the event.")
+    @NotNull(message="There isn't a cost in place for the event.")
     Double eventCost;
 
 
     @NonNull
-    @NotBlank(message="You must insert a projected duration for the event.")
+    @NotNull(message="You must insert a projected duration for the event.")
     Double eventDuration;
+
 
 }

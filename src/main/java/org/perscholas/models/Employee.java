@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name = "Employees")
 @Data
@@ -42,11 +43,13 @@ public class Employee implements Serializable{
     @NotBlank(message ="The Email Field is blank.")
     String employeeEmail;
 
+
     @NonNull
     @NotBlank@NotNull(message="You must select a User Type.")
     String eUserType;
 
     @NonNull@NotBlank(message="You must enter a password")
     String ePassword;
+
 
 }
