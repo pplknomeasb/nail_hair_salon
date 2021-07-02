@@ -29,7 +29,7 @@ public class EventService {
     }
 
 
-    public void updateEvent(String eventType, Long eventEmployeeNumber, Double eventCost, Double eventDuration){
+    public void updateEvent(String eventType, Double eventEmployeeNumber, Double eventCost, Double eventDuration){
 
         boolean exists = eventRepo.findEventByeventType(eventType).isPresent();//.existsById(eventType);
         if(exists){

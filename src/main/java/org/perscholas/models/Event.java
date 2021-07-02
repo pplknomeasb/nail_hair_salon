@@ -27,13 +27,14 @@ public class Event implements Serializable{
     @NonNull@NotBlank(message = "The event type field is blank")
     String eventType;
 
-    @ManyToMany
-    Set<Employee> employeeSet;
+//    @ManyToMany@JoinColumn(name = employeeNumber, nullable = false)Employee employee;
+//    Set<Employee> employeeSet;
+
     @NonNull
-    //@NotBlank(message = "You must assign an Employee Number to the event.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
+    @NotNull(message = "You must assign an Employee Number to the event.") //@Size(min = 3, max = 25, message = "Username must be between {2} and {1} Characters")
     //@Column(unique=true)
     //@UniqueConstraint()
-    Long eventEmployeeNumber;
+    Double eventEmployeeNumber;
 
     @NonNull
     @NotNull(message="There isn't a cost in place for the event.")
@@ -43,6 +44,5 @@ public class Event implements Serializable{
     @NonNull
     @NotNull(message="You must insert a projected duration for the event.")
     Double eventDuration;
-
 
 }
