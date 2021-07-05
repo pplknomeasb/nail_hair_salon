@@ -20,3 +20,7 @@ login information; all user names are email and passwords are to be
 set by either the Owner or Admin; owner and Admin have god privileges.
 Clients are not considered "users" because adding information to the
 back-end is the only role.
+
+I am having complications with cacheing issues.  I believe once
+I integrate thymeleaf, it'll resolve that issue, but I feel like
+I could handle the issue before thymeleaf.  Ugh...
