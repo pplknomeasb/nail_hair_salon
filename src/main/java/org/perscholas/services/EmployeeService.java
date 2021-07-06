@@ -4,6 +4,7 @@ import lombok.extern.java.Log;
 import org.perscholas.daos.IEmployeeRepo;
 import org.perscholas.models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -22,6 +23,8 @@ public class EmployeeService {
 
     public List<Employee> getAllEmployees() {return employeeRepo.findAll();}
 
+
+    @Cacheable
     public Employee addNewEmployee(Employee employee){
         Optional<Employee> employeeOptional = employeeRepo.findEmployeeByemployeeNumber(employee.getEmployeeNumber());
         if(employeeOptional.isPresent()){

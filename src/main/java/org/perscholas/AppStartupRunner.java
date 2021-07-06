@@ -12,13 +12,15 @@ import java.util.Date;
 import org.perscholas.models.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
+
 
 @Component
 @Log
 @Transactional
-
+//@EnableCaching
 public class AppStartupRunner implements CommandLineRunner {
 
     IEmployeeRepo employeeRepo;
